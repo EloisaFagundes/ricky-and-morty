@@ -26,9 +26,11 @@
     "eslint-plugin-react": "^7.20.0",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
+    "init": "^0.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "sb": "^6.1.15",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -38,7 +40,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint '* / ** / *. {js, ts, tsx}' --quiet --fix",
-    "gen-graphql": "graphql-codegen --config codegen.yml"
+    "gen-graphql": "graphql-codegen --config codegen.yml",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
@@ -59,11 +63,17 @@
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.20.1",
+    "@babel/core": "^7.12.10",
+    "@graphql-codegen/cli": "1.20.1",
     "@graphql-codegen/fragment-matcher": "2.0.1",
     "@graphql-codegen/typescript": "1.20.2",
     "@graphql-codegen/typescript-operations": "1.17.14",
     "@graphql-codegen/typescript-react-apollo": "2.2.1",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "babel-loader": "^8.2.2",
     "eslint-config-prettier": "^7.2.0",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-prettier": "^3.3.1",

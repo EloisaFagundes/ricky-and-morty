@@ -23,6 +23,8 @@
   "include": [
     "src"
   ],
+
+  "exclude": ["src/**/*.stories.@(mdx,tsx)"],
   "[typescript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true

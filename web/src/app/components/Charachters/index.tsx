@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGetCharactersQuery } from '../../../generated/graphql';
+import { Card } from '../../../components/atm.card';
 
 export const Characters: React.FC = () => {
   const { data, loading, error } = useGetCharactersQuery();
@@ -18,28 +19,15 @@ export const Characters: React.FC = () => {
 
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Species</td>
-            <td>Origin</td>
-            <td>Location</td>
-            <td>Image</td>
-          </tr>
-        </thead>
-        <tbody>
-          {data?.characters?.results?.map((character) => (
-            <tr key={character?.id}>
-              <td>{character?.name}</td>
-              <td>{character?.species}</td>
-              <td>{character?.origin?.name}</td>
-              <td>{character?.location?.name}</td>
-              <td>{character?.image}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {data?.characters?.results?.map((character) => (
+        <Card key={character?.id}>
+          <h1>{character?.name}</h1>
+          <h2>{character?.species}</h2>
+          <h3>{character?.origin?.name}</h3>
+          <body>{character?.location?.name}</body>
+          <img src={character?.image} alt={character?.name} />
+        </Card>
+      ))}
     </>
   );
 };
